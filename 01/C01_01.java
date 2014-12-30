@@ -18,7 +18,7 @@ import java.util.*;
  * 	I am not sure with the analysis.
  * Space Complexity: O(1)
  */
-public class cc150_01_01{
+public class C01_01{
 	
 	public static void main(String[] args) {
 		System.out.println("Version 1: ");
