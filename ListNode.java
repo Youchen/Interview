@@ -1,11 +1,11 @@
 package _02;
 
 public class ListNode {
-	public int d;
+	public int val;
 	public ListNode next;
 	
 	public ListNode(int data) {
-		d = data;
+		val = data;
 		next = null;
 	}
 	//default to acknowledge that the Node here is the
@@ -19,9 +19,10 @@ public class ListNode {
 	}
 	
 	public void print() {
+		if(this == null) return;
 		ListNode temp = this;
 		while(true) {
-			System.out.print(temp.d + " ");
+			System.out.print(temp.val + " ");
 			temp = temp.next;
 			if(temp == null) break;
 		}
