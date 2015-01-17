@@ -1,25 +1,25 @@
+package _02;
 
-
-public class Node {
+public class ListNode {
 	public int d;
-	public Node next;
+	public ListNode next;
 	
-	public Node(int data) {
+	public ListNode(int data) {
 		d = data;
 		next = null;
 	}
 	//default to acknowledge that the Node here is the
 	//		head node in Linked List.
 	public void append(int data) {
-		Node temp = new Node(data);
-		Node n = this;
+		ListNode temp = new ListNode(data);
+		ListNode n = this;
 		while(n.next != null)
 			n = n.next;
 		n.next = temp;
 	}
 	
 	public void print() {
-		Node temp = this;
+		ListNode temp = this;
 		while(true) {
 			System.out.print(temp.d + " ");
 			temp = temp.next;
@@ -28,4 +28,3 @@ public class Node {
 		System.out.println();
 	}
 }
-
