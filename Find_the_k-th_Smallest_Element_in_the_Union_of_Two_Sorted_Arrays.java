@@ -6,6 +6,9 @@
  * Find the k-th smallest element in the union of A and B. 
  * You can assume that there are no duplicate elements. 
  *
+ * This algorithm is related to the problem:
+ *			Median of Two sorted Arrays.
+ *
  * Reference:
  * 		http://articles.leetcode.com/2011/01/find-k-th-smallest-element-in-union-of.html
  */
