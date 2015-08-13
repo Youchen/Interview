@@ -1,0 +1,12 @@
+
+Below groups are problems applied with similar algorithms:
+
+Group 1:
+	Best time buy and sell stock
+	Maximum Subarray
+	Largest Rectangle in Histogram
+	Longest Increasing Subsequence
+
+Group 2:
+	Best time buy and sell stock III
+	Maximum Subarray II

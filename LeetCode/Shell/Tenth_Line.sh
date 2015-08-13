@@ -1,0 +1,1 @@
+START=10; cat file.txt | tail -n+$START | head -1
