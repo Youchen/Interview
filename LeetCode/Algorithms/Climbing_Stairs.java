@@ -1,4 +1,29 @@
 /**
+ * Round 3
+ * 
+ * Need to review.
+ */
+public class Solution {
+    public int climbStairs(int n) {
+        //2015-08-17 17:44:23 - 2015-08-17 17:50:57 (6 min)
+        if(n <= 1)
+            return 1;
+        
+        int[] memo = new int[n + 1];
+        memo[0] = 1;
+        memo[1] = 1;
+        
+        for(int i = 2; i <= n; i++){
+            memo[i] = memo[i - 1] + memo[i - 2];
+        }
+        return memo[n];
+    }
+}
+
+
+
+
+/**
  * Round 2
  * Nice done!
  */
