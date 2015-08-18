@@ -1,4 +1,33 @@
 /**
+ * Round 2
+ * 
+ * Need to be proficient.
+ */
+public class Solution {
+    public int rob(int[] nums) {
+        //2015-08-17 21:34:27 - 2015-08-17 21:40:33 (6 min)
+        if(nums == null || nums.length == 0)
+            return 0;
+        
+        int len = nums.length;
+        int[] f = new int[len + 1];
+        
+        f[0] = 0;
+        f[1] = nums[0];
+        
+        for(int i = 2; i <= nums.length; i++){
+            f[i] = Math.max(f[i - 1], f[i - 2] + nums[i - 1]);
+        }
+        
+        return f[len];
+    }
+}
+
+
+
+
+
+/**
  * O(n)
  * O(1)
  * 
