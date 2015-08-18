@@ -1,4 +1,39 @@
 /**
+ * Round 4
+ * O(1)
+ * O(n)
+ * 
+ * Note:
+ *      Thoughts is very important!!
+ * 
+ * Thoughts:
+ * Scan from left to right. And keep track the minimal price in left. 
+ *      So, each step, only calculate the difference between current price 
+ *      and minimal price.
+ *       If this diff large than the current max difference, replace it.
+ */
+public class Solution {
+    public int maxProfit(int[] prices) {
+        //2015-08-17 22:37:26
+        if(prices == null || prices.length <= 1)
+            return 0;
+        
+        int min = prices[0], max = 0, profit = 0;
+        for(int i = 1; i < prices.length; i++){
+            if(min > prices[i])
+                min = prices[i];
+                
+            profit = prices[i] - min;
+            if(profit > max)
+                max = profit;
+        }
+        return max;
+    }
+}
+
+
+
+/**
  * Round 3
  * 
  * idea is:
