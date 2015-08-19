@@ -1,1 +1,1 @@
-This is the solution for the problem on poj.org
+Solution for the problem on http://poj.org
