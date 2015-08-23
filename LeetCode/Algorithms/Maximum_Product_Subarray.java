@@ -1,4 +1,40 @@
 /**
+ * Round 3
+ * 
+ * Review:
+ *      as iterating, there are two lines and a maxGlobal go together with the pointer.
+ *          they are maxLocal, minLocal and maxGlobal.
+ *      for every number, you need to multiply it with maxLocal and minLocal, see if
+ *          they can make the max value.
+ *      then Keep updating the maxGlobal.
+ */
+public class Solution {
+    public int maxProduct(int[] nums) {
+        //2015-08-21 00:22:23 - 2015-08-21 00:30:09(8 min)
+        if(nums == null || nums.length == 0)
+            return 0;
+        
+        int minLocal, maxLocal, maxGlobal;
+        minLocal = maxLocal = maxGlobal = nums[0];
+        
+        for(int i = 1; i < nums.length; i++){
+            int temp = minLocal;
+            
+            minLocal = Math.min(nums[i] * minLocal, Math.min(nums[i] * maxLocal, nums[i]));
+            maxLocal = Math.max(nums[i] * maxLocal, Math.max(nums[i] * temp, nums[i]));
+            
+            maxGlobal = Math.max(maxGlobal, maxLocal);
+        }
+        
+        return maxGlobal;
+    }
+}
+
+
+
+
+
+/**
  * Round 2
  */
 public class Solution {
