@@ -1,3 +1,29 @@
+void quick(int[] a, int left, int right){
+	int key = a[left];
+	int low = left;
+	int high = right;
+
+	while(low < high){
+		while(low < high && a[high] >= key)
+			high--;
+		a[low] = a[high];
+
+		while(low < high && a[low] <= key)
+			low++;
+		a[high] = a[low];
+	}
+	a[low] = key;
+	
+	quick(a, left, low - 1);
+	quick(a, low + 1, right);
+}
+
+
+
+
+
+
+
 Bug-free Partition:
 亲测！ 但是不能有 Duplilcates， 更完美的算法可以参考 lintcode Kth Largest Number.
 	int[] nums = {7,4,2,6,3,1,5,9,8};

@@ -1,4 +1,41 @@
 /**
+ * Still cannot finish by myself.
+ */
+public class Solution {
+    public List<String> wordBreak(String s, Set<String> wordDict) {
+        //2015-08-23 19:17:09
+        List<String> res = new ArrayList<String>();
+        
+        int len = s.length();
+        for(int i = len - 1; i >= 0; i--){
+            if(wordDict.contains(s.substring(i)) )
+                break;
+            if(i == 0)
+                return res;
+        }
+        
+        for(int i = 0; i <= len - 2; i++){
+            if(wordDict.contains(s.substring(0, i + 1))){
+                List<String> post = wordBreak(s.substring(i + 1, len), wordDict);
+                
+                if(post.size() != 0){
+                    for(Iterator<String> it = post.iterator(); it.hasNext();)
+                        res.add(s.substring(0, i + 1) + " " + it.next());
+                    
+                }
+            }
+        }
+        
+        if(wordDict.contains(s))
+            res.add(s);
+        return res;
+    }
+}
+
+
+
+
+/**
  * Still cannot get.
  *
  * Reference
@@ -20,7 +57,7 @@ public class Solution {
         for(int i = 0; i < s.length()-1; i++)
         {
             if(dict.contains(s.substring(0,i+1)))
-            {
+            { 
                 List<String> strs = wordBreak(s.substring(i+1,s.length()),dict);
                 if(strs.size() != 0)
                     for(Iterator<String> it = strs.iterator();it.hasNext();)
