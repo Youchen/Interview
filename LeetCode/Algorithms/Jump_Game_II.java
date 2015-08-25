@@ -1,4 +1,34 @@
 /**
+ * Round 3
+ * Remember using Greedy instead of DP.
+ */
+public class Solution {
+    public int jump(int[] nums) {
+        //2015-08-24 16:45:56 - 2015-08-24 16:48:22 (3 min)
+        if(nums == null || nums.length == 0)
+            return 0;
+        
+        int maxReach = 0;
+        int lastReach = 0;
+        int step = 0;
+        
+        for(int i = 0; i < nums.length && i <= maxReach; i++){
+            if(i > lastReach){
+                step++;
+                lastReach = maxReach;
+            }
+            maxReach = Math.max(maxReach, i + nums[i]);
+        }
+        return step;
+    }
+}
+
+
+
+
+
+
+/**
  * Round 2
  * O(n)
  * O(1)
@@ -66,6 +96,7 @@ public class Solution {
         //function
         for(int i = 1; i < nums.length; i++){
             memo[i] = Integer.MAX_VALUE;
+
             for(int j = 0; j < i; j++){
                 if(memo[j] != Integer.MAX_VALUE && i - j <= nums[j]){
                     memo[i] = memo[j] + 1;
