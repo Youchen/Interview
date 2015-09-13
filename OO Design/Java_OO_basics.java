@@ -65,7 +65,7 @@ Overriding
 		The return type should be the same or a subtype of the return type declared in the 
 			original overridden method in the superclass.
 
-		The access level cannot be more restrictive than the overridden method's access level. 
+		The access level cannot be more restrictive than the overridden methods access level. 
 				For example: if the superclass method is declared public then the 
 				overridding method in the sub class cannot be either private or protected.
 

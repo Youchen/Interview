@@ -1,22 +1,40 @@
-void quick(int[] a, int left, int right){
-	int key = a[left];
-	int low = left;
-	int high = right;
-
-	while(low < high){
-		while(low < high && a[high] >= key)
-			high--;
-		a[low] = a[high];
-
-		while(low < high && a[low] <= key)
-			low++;
-		a[high] = a[low];
+public class quickSort {
+	public void quick(int[] a, int left, int right) {
+		if(left > right)
+			return;
+		
+		int key = a[left];
+		int low = left;
+		int high = right;
+		
+		while(low < high) {
+			while(low < high && a[high] > key)
+				high--;
+			a[low] = a[high];
+			
+			while(low < high && a[low] < key)
+				low++;
+			a[high] = a[low];
+		}
+		a[low] = key;
+		
+//		System.out.println(Arrays.toString(a));
+		//1st round, will print [3, 1, 2, 4, 6, 5, 9, 7, 8]
+		
+		quick(a, left, low - 1);
+		quick(a, low + 1, right);
 	}
-	a[low] = key;
 	
-	quick(a, left, low - 1);
-	quick(a, low + 1, right);
+	public static void main(String[] args) {
+		quickSort ob = new quickSort();
+		int[] arr = {4, 6, 2, 1, 3, 5, 9, 7, 8};
+
+		ob.quick(arr, 0, arr.length - 1);
+		System.out.println(Arrays.toString(arr));
+
+	}
 }
+
 
 
 

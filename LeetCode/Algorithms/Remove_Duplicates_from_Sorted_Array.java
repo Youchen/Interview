@@ -1,4 +1,35 @@
 /**
+ * Round 2
+ * Review!
+ * 
+ * The idea is:
+ *      p1 is writing poitner, p2 is iterating pointer.
+ *          both points to the 1st index.
+ * 
+ *      if nums[p2] == nums[p2 - 1], just p2++ {here is i++}
+ *      if !=, just let nums[p1] == nums[p2], then p1++ for next round.
+ */
+public class Solution {
+    public int removeDuplicates(int[] nums) {
+        //2015-09-03 00:51:17 - 2015-09-03 01:03:44 (12 min)
+        if(nums.length < 2) 
+            return nums.length;
+        int id = 1;
+        
+        for(int i = 1; i < nums.length; i++) 
+            if(nums[i] != nums[i-1]) 
+                nums[id++] = nums[i];
+            
+        return id;
+    }
+}
+
+
+
+
+
+
+/**
  * Round 4
  */
 public class Solution {
