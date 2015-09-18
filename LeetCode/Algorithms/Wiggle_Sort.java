@@ -1,4 +1,26 @@
 /**
+ * Reference
+ * 		https://leetcode.com/discuss/57113/java-o-n-solution
+ */
+public class Solution {
+    public void wiggleSort(int[] nums) {
+        for(int i = 1; i < nums.length; i++){
+            int pre = nums[i - 1];
+            
+            if( (i % 2 == 1) == (pre > nums[i])){
+                nums[i - 1] = nums[i];
+                nums[i] = pre;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/**
  * Google
  *
  *	Write a function to convert the array into alternate increasing decreasing numbers:
